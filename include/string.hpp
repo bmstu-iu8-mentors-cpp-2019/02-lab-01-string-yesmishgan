@@ -5,6 +5,9 @@
 
 #include <cstddef>
 #include <iostream>
+#include <utility>
+#include <algorithm>
+#include <cstring>
 
 class String {
  public:
@@ -21,7 +24,7 @@ class String {
   /// Пользовательский конструктор
   /// <param name="data">Данные, которые требуется поместить в создаваемый
   /// объект </param>
-  String(const char* data);
+  explicit String(const char* data);
 
   /// Оператор присваивания
   /// <param name="data">Объект, который копируем </param>
@@ -113,6 +116,7 @@ class String {
 
  private:
   char* Data;
+  std::size_t size_string;
 };
 
 /// Оператор +
